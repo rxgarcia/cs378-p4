@@ -1,38 +1,70 @@
 .App {
+  text-align: left;
+  margin: 10px;
+}
+
+.cityButtons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cityButton {
+  background-color: #64a7eb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.inputCity {
+  width: 70vw;
+  height: 30px;
+  padding-left: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  margin: 5px
+}
+
+.searchButton {
+  background-color: #64a7eb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  height: 35px;
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 10px;  
+}
+
+.currentCity {
+  background-color: #3f6a96;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dataHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dataHeaderItem {
+  width: 50%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.cityHeader {
+  font-size: 20px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
