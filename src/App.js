@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GEOCODING_API_URL =
   "https://geocoding-api.open-meteo.com/v1/search?name=";
@@ -13,6 +13,10 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [savedCities, setSavedCities] = useState(STARTING_CITIES);
   const [currentCity, setCurrentCity] = useState("");
+
+  useEffect(() => {
+    seeDataFor(STARTING_CITIES[0]);
+  }, [])
 
   const getCityCoords = async (name) => {
     try {
@@ -28,7 +32,7 @@ function App() {
       }
       return coords;
     } catch (e) {
-      alert("Invalid City Name");
+      alert("Invalid City Name: " + e);
     }
   };
 
@@ -38,7 +42,7 @@ function App() {
       cityCoords.lat +
       "&longitude=" +
       cityCoords.long +
-      "&hourly=temperature_2m&timeformat=unixtime&temperature_unit=fahrenheit";
+      "&hourly=temperature_2m&timeformat=unixtime&temperature_unit=fahrenheit&timezone=CST";
     try {
       const response = await fetch(WEATHER_API_URL + query);
       const json = await response.json();
@@ -115,7 +119,7 @@ function App() {
         {currentCity === "" ? "" : currentCity + " Temperature Forcast"}
       </p>
       <div className="dataHeader">
-        <p className="dataHeaderItem">Time</p>
+        <p className="dataHeaderItem">Time (CST)</p>
         <p className="dataHeaderItem">Temperature</p>
       </div>
       <hr />
