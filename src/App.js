@@ -32,7 +32,7 @@ function App() {
       }
       return coords;
     } catch (e) {
-      alert("Invalid City Name: " + e);
+      alert("Invalid City Name!");
     }
   };
 
