@@ -159,6 +159,7 @@ function App() {
       setLoggedInUser("");
       setData([]);
       setSavedCities([]);
+      setCurrentCity("")
     }).catch((error) => {
       console.log(error);
     });
