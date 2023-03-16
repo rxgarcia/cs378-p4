@@ -68,3 +68,14 @@
   font-size: 20px;
 
 }
+
+.loginPrompt {
+  font-size: 20px;
+  text-align: center;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
